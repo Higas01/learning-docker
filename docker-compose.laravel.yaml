@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  laravel:
+    build:
+      context: ./laravel
+      dockerfile: dockerfile.prod
+    image: higas/laravel:prod
+    container_name: laravel
+    networks:
+      - laranet
+
+networks:
+  laranet:
+    driver: bridge
